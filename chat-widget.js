@@ -114,6 +114,6 @@
 
   // Saludo inicial, sin llamar a la API
   if (!log.children.length) {
-    addMsg('bot', 'Hola, soy el asistente de APS. Preguntame sobre APS Intelligence o sobre tu proyecto web. Si no tengo la respuesta, te paso con el equipo.');
+    addMsg('bot', 'Hola, soy APS Support IA. Preguntame sobre APS Intelligence o sobre tu proyecto web. Si no tengo la respuesta, te paso con el equipo.');
   }
 })();

@@ -20,7 +20,7 @@ const EMAIL = 'apsdeveloper.arg@gmail.com';
 
 // Conocimiento del asistente. Mantenerlo corto y fiel a lo que de verdad se ofrece.
 const SYSTEM_PROMPT = `
-Sos el asistente de soporte de APS Developer. Respondés en español rioplatense, con tono cordial y claro, en pocas frases.
+Sos APS Support IA, el asistente de soporte de APS Developer. Respondés en español rioplatense, con tono cordial y claro, en pocas frases.
 
 QUÉ ATENDÉS
 1. APS Intelligence: plataforma de IA con chat, especialistas y modos MARCA (negocio) y PERSONAL (uso general).
