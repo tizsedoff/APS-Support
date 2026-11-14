@@ -86,6 +86,7 @@ export default async function handler(req, res) {
 
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
+    console.error('[chat] falta la variable GEMINI_API_KEY');
     return res.status(503).json(handoffReply(FALLBACK_HANDOFF));
   }
 
@@ -129,6 +130,8 @@ export default async function handler(req, res) {
     });
 
     if (!upstream.ok) {
+      const detail = (await upstream.text().catch(() => '')).slice(0, 500);
+      console.error('[chat] Gemini respondió', upstream.status, 'modelo:', model, 'detalle:', detail);
       return res.status(502).json(handoffReply(FALLBACK_HANDOFF));
     }
 
@@ -143,7 +146,8 @@ export default async function handler(req, res) {
     const reply = raw.replaceAll(HANDOFF_MARK, '').trim();
 
     return res.status(200).json({ reply, handoff });
-  } catch {
+  } catch (err) {
+    console.error('[chat] error al llamar a Gemini:', err && err.name, err && err.message);
     return res.status(502).json(handoffReply(FALLBACK_HANDOFF));
   } finally {
     clearTimeout(timer);
