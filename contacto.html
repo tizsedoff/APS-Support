@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contacto | APS Developer</title>
+<meta name="description" content="Contactá al equipo de APS Developer por WhatsApp, correo o formulario." />
+<meta name="theme-color" content="#05070b" />
+<link rel="icon" href="assets/aps-developer-con-fondo.jpg" />
+<link rel="apple-touch-icon" href="assets/aps-developer-con-fondo.jpg" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="scroll-bar" aria-hidden="true"><span id="scroll-progress"></span></div>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/aps-developer-sin-fondo.png" alt="APS Developer" width="36" height="36" />
+      <span class="brand-text">APS <span>Developer</span><small>Centro de soporte</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="aps-intelligence.html">APS Intelligence</a>
+      <a href="aps-developer.html">APS Developer</a>
+      <a href="planes.html">Planes</a>
+      <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+      <a href="contacto.html" class="is-current" aria-current="page">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="wrap page-hero reveal">
+  <span class="eyebrow">Contacto</span>
+  <h1>¿No encontraste tu respuesta?</h1>
+  <p class="lead">Escribinos y te respondemos lo antes posible. Si consultás por APS Intelligence, incluí el correo de tu cuenta. Si es por un proyecto web, incluí el nombre del negocio.</p>
+  <div class="channels">
+    <a class="btn btn-wa" href="https://wa.me/5493755301413" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn-ghost" href="mailto:apsdeveloper.arg@gmail.com">Enviar correo</a>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="contact reveal">
+    <div>
+      <h2>Enviá una consulta</h2>
+      <p>Se abre WhatsApp con tu consulta ya redactada. Esta página no guarda tus datos.</p>
+    </div>
+    <form id="form-soporte" aria-label="Formulario de soporte">
+      <label>Nombre<input name="nombre" required maxlength="80" autocomplete="name" /></label>
+      <label>Correo de contacto<input name="correo" type="email" required maxlength="120" autocomplete="email" /></label>
+      <label>Producto
+        <select name="producto" required>
+          <option value="">Elegí una opción</option>
+          <option>APS Intelligence</option>
+          <option>APS Developer (web o proyecto)</option>
+          <option>Otro</option>
+        </select>
+      </label>
+      <label>Mensaje<textarea name="mensaje" required maxlength="1000"></textarea></label>
+      <button class="btn btn-primary" type="submit">Enviar consulta</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <span>© APS Developer · Centro de soporte</span>
+    <span><a href="preguntas-frecuentes.html">Preguntas frecuentes</a> · <a href="contacto.html">Contacto</a></span>
+  </div>
+</footer>
+
+<button id="chat-launcher" class="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel">
+  <span class="chat-launcher-dot" aria-hidden="true"></span>
+  Preguntale a APS Support IA
+</button>
+<div id="chat-panel" class="chat-panel" role="dialog" aria-label="Asistente de soporte" hidden>
+  <header class="chat-head">
+    <div>
+      <strong>APS Support IA</strong>
+      <small>Respuestas rápidas · te derivamos si no sé</small>
+    </div>
+    <button class="chat-close" type="button" aria-label="Cerrar asistente">×</button>
+  </header>
+  <div class="chat-log" aria-live="polite"></div>
+  <form class="chat-form">
+    <input class="chat-input" type="text" maxlength="600" placeholder="Escribí tu consulta…" aria-label="Escribí tu consulta" autocomplete="off" required />
+    <button class="chat-send btn btn-primary" type="submit">Enviar</button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+<script src="chat-widget.js"></script>
+</body>
+</html>

@@ -42,7 +42,7 @@
   onScroll();
 
   /* ---------- Logo 3D que sigue el puntero en el hero ---------- */
-  const hero = document.getElementById('inicio');
+  const hero = document.querySelector('.hero');
   if (hero && logo && !reduceMotion && window.matchMedia('(hover: hover)').matches) {
     hero.addEventListener('pointermove', (e) => {
       const r = hero.getBoundingClientRect();
@@ -99,14 +99,11 @@
   }
 
   chips.forEach((c) => c.addEventListener('click', () => setFiltro(c.dataset.filter)));
-  document.querySelectorAll('.product').forEach((p) =>
-    p.addEventListener('click', () => setFiltro(p.dataset.filter))
-  );
   if (buscador) {
     buscador.addEventListener('input', () => {
       aplicarFiltros();
       if (buscador.value.trim()) {
-        document.getElementById('preguntas-frecuentes').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('lista-faq').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   }

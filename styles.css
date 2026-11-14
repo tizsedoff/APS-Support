@@ -349,3 +349,31 @@ input:focus, select:focus, textarea:focus { border-color: var(--ai-cyan); box-sh
 /* Secciones separadas: cada bloque se distingue y el ancla no queda bajo el header */
 main > section { scroll-margin-top: 84px; }
 main > section + section { border-top: 1px solid var(--border); padding-top: 64px; }
+
+/* ==========================================================================
+   Páginas separadas
+   ========================================================================== */
+.nav-links a.is-current { color: var(--text); }
+.nav-links a.is-current::after { transform: scaleX(1); }
+.page-hero { padding-top: 64px; padding-bottom: 8px; }
+.page-hero > * { max-width: 680px; }
+.page-hero .eyebrow { max-width: none; }
+.page-hero h1 { font-size: clamp(30px, 4.6vw, 46px); margin: 16px 0 12px; }
+.page-hero .lead { margin-bottom: 22px; }
+main > section.wrap { padding-top: 48px; padding-bottom: 8px; }
+main > section.wrap + section.wrap { border-top: 1px solid var(--border); padding-top: 56px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px;
+  transition: border-color .25s, transform .3s var(--ease);
+}
+.card:hover { border-color: rgba(0, 206, 201, 0.35); transform: translateY(-3px); }
+.card .ico {
+  width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+  background: var(--dev-soft); color: var(--ai-cyan); font-weight: 800; margin-bottom: 14px;
+}
+.card h3 { font-size: 17px; margin-bottom: 6px; }
+.card p { color: var(--text-2); font-size: 14px; }
+.cta-row { margin-top: 26px; }
+.page-hero .search { margin: 0; }
+.page-hero .search .btn { width: 100%; }

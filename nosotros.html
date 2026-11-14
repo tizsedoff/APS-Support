@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nosotros | APS Developer</title>
+<meta name="description" content="Quiénes somos: APS Developer, agencia de desarrollo web y automatización." />
+<meta name="theme-color" content="#05070b" />
+<link rel="icon" href="assets/aps-developer-con-fondo.jpg" />
+<link rel="apple-touch-icon" href="assets/aps-developer-con-fondo.jpg" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="scroll-bar" aria-hidden="true"><span id="scroll-progress"></span></div>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/aps-developer-sin-fondo.png" alt="APS Developer" width="36" height="36" />
+      <span class="brand-text">APS <span>Developer</span><small>Centro de soporte</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html" class="is-current" aria-current="page">Nosotros</a>
+      <a href="aps-intelligence.html">APS Intelligence</a>
+      <a href="aps-developer.html">APS Developer</a>
+      <a href="planes.html">Planes</a>
+      <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="wrap page-hero reveal">
+  <span class="eyebrow">Nosotros</span>
+  <h1>Quiénes somos</h1>
+  <p class="lead">APS Developer es una agencia de desarrollo web. Hacemos sitios comerciales y sitios premium, y también desarrollamos APS Intelligence, nuestra plataforma de IA.</p>
+</section>
+
+<section class="wrap">
+  <div class="cards">
+    <div class="card reveal"><div class="ico">1</div><h3>Qué hacemos</h3><p>Webs comerciales para negocios que quieren empezar, y webs premium para proyectos que necesitan más diseño y más animación.</p></div>
+    <div class="card reveal"><div class="ico">2</div><h3>Cómo organizamos los proyectos</h3><p>Cada proyecto arranca con un relevamiento: qué hace el negocio, qué necesita el sitio y cómo se va a ver.</p></div>
+    <div class="card reveal"><div class="ico">3</div><h3>Automatizaciones</h3><p>Conectamos formularios, pedidos y paneles de gestión para que la información llegue donde hace falta.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="section-head reveal">
+    <h2>Del primer contacto a la entrega</h2>
+    <p>El proceso es el mismo para todos los proyectos.</p>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><div class="step-num">01</div><h3>Primer contacto</h3><p>Nos contás tu negocio. Si querés, te armamos una preview gratuita.</p></div>
+    <div class="step reveal"><div class="step-num">02</div><h3>Relevamiento</h3><p>Definimos alcance, estructura del sitio, identidad visual y material.</p></div>
+    <div class="step reveal"><div class="step-num">03</div><h3>Entrega</h3><p>Revisamos juntos la versión, hacemos los ajustes y publicamos.</p></div>
+  </div>
+  <p class="cta-row"><a class="btn btn-primary" href="contacto.html">Hablemos de tu proyecto</a></p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <span>© APS Developer · Centro de soporte</span>
+    <span><a href="preguntas-frecuentes.html">Preguntas frecuentes</a> · <a href="contacto.html">Contacto</a></span>
+  </div>
+</footer>
+
+<button id="chat-launcher" class="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel">
+  <span class="chat-launcher-dot" aria-hidden="true"></span>
+  Preguntale a APS Support IA
+</button>
+<div id="chat-panel" class="chat-panel" role="dialog" aria-label="Asistente de soporte" hidden>
+  <header class="chat-head">
+    <div>
+      <strong>APS Support IA</strong>
+      <small>Respuestas rápidas · te derivamos si no sé</small>
+    </div>
+    <button class="chat-close" type="button" aria-label="Cerrar asistente">×</button>
+  </header>
+  <div class="chat-log" aria-live="polite"></div>
+  <form class="chat-form">
+    <input class="chat-input" type="text" maxlength="600" placeholder="Escribí tu consulta…" aria-label="Escribí tu consulta" autocomplete="off" required />
+    <button class="chat-send btn btn-primary" type="submit">Enviar</button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+<script src="chat-widget.js"></script>
+</body>
+</html>

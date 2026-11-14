@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Planes | APS Developer</title>
+<meta name="description" content="Planes de APS Intelligence: Basic, Plus, Pro y Max, con sus límites de uso." />
+<meta name="theme-color" content="#05070b" />
+<link rel="icon" href="assets/aps-developer-con-fondo.jpg" />
+<link rel="apple-touch-icon" href="assets/aps-developer-con-fondo.jpg" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="scroll-bar" aria-hidden="true"><span id="scroll-progress"></span></div>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/aps-developer-sin-fondo.png" alt="APS Developer" width="36" height="36" />
+      <span class="brand-text">APS <span>Developer</span><small>Centro de soporte</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="aps-intelligence.html">APS Intelligence</a>
+      <a href="aps-developer.html">APS Developer</a>
+      <a href="planes.html" class="is-current" aria-current="page">Planes</a>
+      <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="wrap page-hero reveal">
+  <span class="eyebrow">Planes</span>
+  <h1>Planes de APS Intelligence</h1>
+  <p class="lead">Los valores pueden cambiar. La versión vigente es la que aparece dentro de la app.</p>
+</section>
+
+<section class="wrap">
+  <div class="plans">
+    <div class="plan tilt reveal"><h3>Basic</h3><div class="price">Gratis</div><ul><li>15 usos por día</li></ul></div>
+    <div class="plan tilt reveal featured"><h3>Plus</h3><div class="price">US$15 <small>/ mes</small></div><ul><li>600 usos por mes</li></ul></div>
+    <div class="plan tilt reveal"><h3>Pro</h3><div class="price">US$55 <small>/ mes</small></div><ul><li>1.200 usos por mes</li></ul></div>
+    <div class="plan tilt reveal"><h3>Max</h3><div class="price">US$60 <small>/ mes</small></div><ul><li>4.000 usos por mes</li></ul></div>
+  </div>
+  <p class="cta-row"><a class="btn btn-ghost" href="preguntas-frecuentes.html">¿Cómo cambio de plan?</a></p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <span>© APS Developer · Centro de soporte</span>
+    <span><a href="preguntas-frecuentes.html">Preguntas frecuentes</a> · <a href="contacto.html">Contacto</a></span>
+  </div>
+</footer>
+
+<button id="chat-launcher" class="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel">
+  <span class="chat-launcher-dot" aria-hidden="true"></span>
+  Preguntale a APS Support IA
+</button>
+<div id="chat-panel" class="chat-panel" role="dialog" aria-label="Asistente de soporte" hidden>
+  <header class="chat-head">
+    <div>
+      <strong>APS Support IA</strong>
+      <small>Respuestas rápidas · te derivamos si no sé</small>
+    </div>
+    <button class="chat-close" type="button" aria-label="Cerrar asistente">×</button>
+  </header>
+  <div class="chat-log" aria-live="polite"></div>
+  <form class="chat-form">
+    <input class="chat-input" type="text" maxlength="600" placeholder="Escribí tu consulta…" aria-label="Escribí tu consulta" autocomplete="off" required />
+    <button class="chat-send btn btn-primary" type="submit">Enviar</button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+<script src="chat-widget.js"></script>
+</body>
+</html>

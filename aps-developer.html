@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>APS Developer | APS Developer</title>
+<meta name="description" content="APS Developer: sitios web, previews gratuitas, cambios en tu web y paneles de gestión." />
+<meta name="theme-color" content="#05070b" />
+<link rel="icon" href="assets/aps-developer-con-fondo.jpg" />
+<link rel="apple-touch-icon" href="assets/aps-developer-con-fondo.jpg" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="scroll-bar" aria-hidden="true"><span id="scroll-progress"></span></div>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/aps-developer-sin-fondo.png" alt="APS Developer" width="36" height="36" />
+      <span class="brand-text">APS <span>Developer</span><small>Centro de soporte</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="aps-intelligence.html">APS Intelligence</a>
+      <a href="aps-developer.html" class="is-current" aria-current="page">APS Developer</a>
+      <a href="planes.html">Planes</a>
+      <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="wrap page-hero reveal">
+  <span class="eyebrow">APS Developer</span>
+  <h1>Tu web, de la idea a la publicación</h1>
+  <p class="lead">Sitios web para negocios, previews gratuitas para empezar y paneles de gestión para cuando necesitás administrar contenido.</p>
+  <div class="channels"><a class="btn btn-primary" href="contacto.html">Pedir una preview</a><a class="btn btn-ghost" href="nosotros.html">Cómo trabajamos</a></div>
+</section>
+
+<section class="wrap">
+  <div class="cards">
+    <div class="card reveal"><div class="ico">W</div><h3>Sitios web</h3><p>Webs comerciales y webs premium, adaptadas al negocio y a su identidad visual.</p></div>
+    <div class="card reveal"><div class="ico">P</div><h3>Preview gratuita</h3><p>Antes de contratar, te mostramos cómo quedaría tu negocio en la web.</p></div>
+    <div class="card reveal"><div class="ico">C</div><h3>Cambios en tu web</h3><p>Pedí cambios sobre una web ya publicada. Si son grandes, los presupuestamos antes.</p></div>
+    <div class="card reveal"><div class="ico">A</div><h3>Paneles de gestión</h3><p>Alta, baja y modificación de contenido para que administres tu sitio sin depender de nosotros.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="section-head reveal"><h2>Preguntas sobre proyectos web</h2></div>
+  <div class="faq">
+      <details data-product="dev">
+        <summary>¿Cómo pido una preview gratuita?</summary>
+        <p>Escribinos por WhatsApp o usá el formulario de contacto con el nombre de tu negocio, tu rubro y, si tenés, tu Instagram.</p>
+      </details>
+      <details data-product="dev">
+        <summary>¿Cómo pido cambios en mi web publicada?</summary>
+        <p>Indicá qué querés cambiar, en qué página y con qué ejemplo si lo tenés. Si el cambio es grande, lo presupuestamos antes.</p>
+      </details>
+      <details data-product="dev">
+        <summary>¿Qué incluye la configuración de web?</summary>
+        <p>Depende del proyecto. Podés armar la configuración con el formulario de relevamiento y recibir una propuesta.</p>
+      </details>
+      <details data-product="dev">
+        <summary>¿Dónde envío logo, fotos, textos y precios?</summary>
+        <p>Por WhatsApp o por correo a apsdeveloper.arg@gmail.com, indicando el nombre de tu negocio en el asunto.</p>
+      </details>
+  </div>
+  <p class="cta-row"><a class="btn btn-ghost" href="preguntas-frecuentes.html">Todas las preguntas</a></p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <span>© APS Developer · Centro de soporte</span>
+    <span><a href="preguntas-frecuentes.html">Preguntas frecuentes</a> · <a href="contacto.html">Contacto</a></span>
+  </div>
+</footer>
+
+<button id="chat-launcher" class="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel">
+  <span class="chat-launcher-dot" aria-hidden="true"></span>
+  Preguntale a APS Support IA
+</button>
+<div id="chat-panel" class="chat-panel" role="dialog" aria-label="Asistente de soporte" hidden>
+  <header class="chat-head">
+    <div>
+      <strong>APS Support IA</strong>
+      <small>Respuestas rápidas · te derivamos si no sé</small>
+    </div>
+    <button class="chat-close" type="button" aria-label="Cerrar asistente">×</button>
+  </header>
+  <div class="chat-log" aria-live="polite"></div>
+  <form class="chat-form">
+    <input class="chat-input" type="text" maxlength="600" placeholder="Escribí tu consulta…" aria-label="Escribí tu consulta" autocomplete="off" required />
+    <button class="chat-send btn btn-primary" type="submit">Enviar</button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+<script src="chat-widget.js"></script>
+</body>
+</html>
