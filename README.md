@@ -33,6 +33,6 @@ No necesita build ni dependencias. Abrí `index.html` en el navegador o publicá
 Variables de entorno (configurarlas en el hosting, por ejemplo Vercel):
 
 - `GEMINI_API_KEY`: obligatoria. Sin ella, el asistente responde con la derivación a WhatsApp/correo.
-- `GEMINI_MODEL`: opcional. Por defecto `gemini-3.8-flash`. Verificar el nombre vigente en la documentación de Gemini antes de usarlo.
+- `GEMINI_MODEL`: opcional. Por defecto `gemini-3.5-flash-lite`. Verificar el nombre vigente en la documentación de Gemini antes de usarlo.
 
 Límites: mensajes de hasta 600 caracteres, historial de 8 mensajes, respuestas de hasta 400 tokens y 15 s de timeout.

@@ -3,7 +3,7 @@
 //
 // Variables de entorno:
 //   GEMINI_API_KEY  (obligatoria)  clave de la API de Gemini
-//   GEMINI_MODEL    (opcional)     modelo a usar; por defecto "gemini-3.8-flash"
+//   GEMINI_MODEL    (opcional)     modelo a usar; por defecto "gemini-3.5-flash-lite"
 //
 // Contrato:
 //   POST /api/chat  { messages: [{ role: "user"|"assistant", text: string }, ...] }
@@ -99,7 +99,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Falta el mensaje del usuario' });
   }
 
-  const model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
+  const model = process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite';
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
 
   const contents = messages.map((m) => ({
