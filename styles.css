@@ -377,3 +377,36 @@ main > section.wrap + section.wrap { border-top: 1px solid var(--border); paddin
 .cta-row { margin-top: 26px; }
 .page-hero .search { margin: 0; }
 .page-hero .search .btn { width: 100%; }
+
+/* ==========================================================================
+   Animaciones al hacer scroll (versión ampliada)
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 44px, 0);
+  filter: blur(6px);
+  transition:
+    opacity .9s var(--ease),
+    transform 1s var(--ease),
+    filter .9s var(--ease);
+  transition-delay: calc(var(--i, 0) * 120ms);
+}
+.reveal.is-visible { opacity: 1; transform: none; filter: none; }
+.reveal--left { transform: translate3d(-60px, 0, 0); }
+.reveal--right { transform: translate3d(60px, 0, 0); }
+.reveal--left.is-visible, .reveal--right.is-visible { transform: none; }
+/* Los tilt conservan su rotación al aparecer */
+.tilt.reveal { transform: translate3d(0, 44px, 0); }
+.tilt.reveal.is-visible { transform: perspective(900px) rotateX(var(--tx, 0deg)) rotateY(var(--ty, 0deg)); }
+/* Títulos de sección con un trazo que aparece */
+.section-head h2, main > section.wrap > h2 {
+  background: linear-gradient(90deg, var(--text) 0 100%) no-repeat left bottom / 0 3px;
+  transition: background-size 1.1s var(--ease);
+}
+.section-head.is-visible h2, main > section.wrap > h2.is-visible { background-size: 100% 3px; }
+/* Parallax en el fondo para dar profundidad */
+.bg-glow { will-change: transform; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .tilt.reveal, .reveal--left, .reveal--right { opacity: 1; transform: none; filter: none; transition: none; }
+  .section-head h2, main > section.wrap > h2 { background: none; }
+}

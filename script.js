@@ -5,6 +5,37 @@
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- Marcado automático de bloques para animar al hacer scroll ---------- */
+  // Cada grupo de hermanos (tarjetas, pasos, planes, preguntas) entra escalonado.
+  const AUTO = [
+    '.page-hero > *',
+    '.section-head',
+    'main > section.wrap > h2',
+    '.cards > .card',
+    '.steps > .step',
+    '.plans > .plan',
+    '.faq > details',
+    '.products > .product',
+    '.cta-row',
+    '.channels',
+    '.support-form',
+    '.contact > div',
+  ];
+  const grupos = new Map();
+  document.querySelectorAll(AUTO.join(',')).forEach((el) => {
+    if (el.closest('.chat-panel') || el.classList.contains('reveal')) return;
+    const padre = el.parentElement;
+    if (!grupos.has(padre)) grupos.set(padre, []);
+    grupos.get(padre).push(el);
+  });
+  grupos.forEach((items) => items.forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.setProperty('--i', String(i));
+  }));
+  // Dirección alternada en secciones de dos columnas
+  document.querySelectorAll('.hero-copy').forEach((el) => el.classList.add('reveal--left'));
+  document.querySelectorAll('.hero-visual').forEach((el) => el.classList.add('reveal--right'));
+
   /* ---------- Revelado al hacer scroll ---------- */
   const revelables = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduceMotion) {
@@ -30,6 +61,15 @@
     const max = document.documentElement.scrollHeight - window.innerHeight;
     const p = max > 0 ? window.scrollY / max : 0;
     if (bar) bar.style.transform = `scaleX(${p})`;
+    // Parallax suave: usa la propiedad translate, así no pisa las transformaciones de las animaciones
+    if (!reduceMotion) {
+      document.querySelectorAll('[data-parallax]').forEach((el) => {
+        const k = parseFloat(el.dataset.parallax) || 0;
+        const r = el.getBoundingClientRect();
+        const centro = r.top + r.height / 2 - window.innerHeight / 2;
+        el.style.translate = `0 ${(centro * k).toFixed(1)}px`;
+      });
+    }
     if (logo && !reduceMotion) {
       logo.style.setProperty('--ry', `${(p * 60 - 30).toFixed(2)}deg`);
       logo.style.setProperty('--rx', `${(Math.sin(p * Math.PI) * 8).toFixed(2)}deg`);
