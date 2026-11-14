@@ -234,6 +234,28 @@
   </div>
 </footer>
 
+<!-- ASISTENTE IA -->
+<button id="chat-launcher" class="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel">
+  <span class="chat-launcher-dot" aria-hidden="true"></span>
+  Preguntale a la IA
+</button>
+
+<div id="chat-panel" class="chat-panel" role="dialog" aria-label="Asistente de soporte" hidden>
+  <header class="chat-head">
+    <div>
+      <strong>Asistente de soporte</strong>
+      <small>Respuestas rápidas · te derivamos si no sé</small>
+    </div>
+    <button class="chat-close" type="button" aria-label="Cerrar asistente">×</button>
+  </header>
+  <div class="chat-log" aria-live="polite"></div>
+  <form class="chat-form">
+    <input class="chat-input" type="text" maxlength="600" placeholder="Escribí tu consulta…" aria-label="Escribí tu consulta" autocomplete="off" required />
+    <button class="chat-send btn btn-primary" type="submit">Enviar</button>
+  </form>
+</div>
+
 <script src="script.js"></script>
+<script src="chat-widget.js"></script>
 </body>
 </html>
