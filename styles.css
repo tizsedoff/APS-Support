@@ -453,3 +453,26 @@ main > section.wrap + section.wrap { border-top: 1px solid var(--border); paddin
 
 /* Evita que la entrada desde el costado del logo genere desplazamiento lateral */
 .hero, main { overflow-x: clip; }
+
+/* ==========================================================================
+   3D ligado al scroll (rama preview)
+   ========================================================================== */
+.cards, .steps, .plans, .products { perspective: 1200px; }
+.cards > .card, .steps > .step, .plans > .plan, .products > .product {
+  transform-style: preserve-3d;
+  will-change: rotate, scale;
+  transition: scale .4s var(--ease), border-color .3s, box-shadow .4s;
+}
+/* Profundidad: el fondo de cada tarjeta se ve detrás del contenido */
+.cards > .card::after, .steps > .step::after, .plans > .plan::after {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(160deg, rgba(0, 206, 201, 0.10), transparent 55%);
+  transform: translateZ(-1px); opacity: .9;
+}
+.cards > .card, .steps > .step, .plans > .plan { position: relative; }
+@media (hover: none), (max-width: 820px) {
+  .cards > .card, .steps > .step, .plans > .plan, .products > .product { rotate: none !important; scale: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cards > .card, .steps > .step, .plans > .plan, .products > .product { rotate: none !important; scale: none !important; }
+}

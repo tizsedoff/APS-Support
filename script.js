@@ -66,6 +66,28 @@
     revelables.forEach((el) => el.classList.add('is-visible'));
   }
 
+
+  /* ---------- 3D ligado al scroll ----------
+     Cada tarjeta gira en el eje X según qué tan lejos está del centro de la pantalla,
+     y se acerca al frente al llegar al centro. Usa las propiedades rotate y translate,
+     así no pisa las animaciones de entrada. */
+  const en3d = !reduceMotion && window.matchMedia('(hover: hover) and (min-width: 821px)').matches;
+  const tarjetas3d = Array.from(document.querySelectorAll('.cards > .card, .steps > .step, .plans > .plan, .products > .product'));
+  function actualizar3d() {
+    if (!en3d) return;
+    const vh = window.innerHeight;
+    tarjetas3d.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.bottom < -200 || r.top > vh + 200) return;
+      const centro = r.top + r.height / 2;
+      const t = Math.max(-1, Math.min(1, (centro - vh / 2) / (vh / 2)));
+      const grados = (t * 14).toFixed(2);
+      el.style.rotate = `1 0 0 ${grados}deg`;
+      el.style.translate = `0 0 0`;
+      el.style.scale = String((1 - Math.abs(t) * 0.04).toFixed(3));
+    });
+  }
+
   /* ---------- Barra de progreso y logo 3D según el scroll ---------- */
   const bar = document.getElementById('scroll-progress');
   const logo = document.getElementById('logo3d');
@@ -75,6 +97,7 @@
     const max = document.documentElement.scrollHeight - window.innerHeight;
     const p = max > 0 ? window.scrollY / max : 0;
     if (bar) bar.style.transform = `scaleX(${p})`;
+    actualizar3d();
     // Parallax suave: usa la propiedad translate, así no pisa las transformaciones de las animaciones
     if (!reduceMotion) {
       document.querySelectorAll('[data-parallax]').forEach((el) => {
