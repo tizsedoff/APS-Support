@@ -81,10 +81,11 @@
       if (r.bottom < -200 || r.top > vh + 200) return;
       const centro = r.top + r.height / 2;
       const t = Math.max(-1, Math.min(1, (centro - vh / 2) / (vh / 2)));
-      const grados = (t * 14).toFixed(2);
+      const grados = (t * 30).toFixed(2);
+      const z = ((1 - Math.abs(t)) * 80 - 40).toFixed(1);
       el.style.rotate = `1 0 0 ${grados}deg`;
-      el.style.translate = `0 0 0`;
-      el.style.scale = String((1 - Math.abs(t) * 0.04).toFixed(3));
+      el.style.translate = `0 0 ${z}px`;
+      el.style.scale = String((1 - Math.abs(t) * 0.08).toFixed(3));
     });
   }
 

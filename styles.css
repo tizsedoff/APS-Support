@@ -457,7 +457,7 @@ main > section.wrap + section.wrap { border-top: 1px solid var(--border); paddin
 /* ==========================================================================
    3D ligado al scroll (rama preview)
    ========================================================================== */
-.cards, .steps, .plans, .products { perspective: 1200px; }
+.cards, .steps, .plans, .products { perspective: 900px; }
 .cards > .card, .steps > .step, .plans > .plan, .products > .product {
   transform-style: preserve-3d;
   will-change: rotate, scale;
@@ -475,4 +475,9 @@ main > section.wrap + section.wrap { border-top: 1px solid var(--border); paddin
 }
 @media (prefers-reduced-motion: reduce) {
   .cards > .card, .steps > .step, .plans > .plan, .products > .product { rotate: none !important; scale: none !important; }
+}
+
+/* Refuerzo del 3D: sombra que cambia con el giro */
+.cards > .card, .steps > .step, .plans > .plan, .products > .product {
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9);
 }
