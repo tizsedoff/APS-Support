@@ -99,6 +99,7 @@
     const p = max > 0 ? window.scrollY / max : 0;
     if (bar) bar.style.transform = `scaleX(${p})`;
     actualizar3d();
+    document.documentElement.style.setProperty('--sp', p.toFixed(4));
     // Parallax suave: usa la propiedad translate, así no pisa las transformaciones de las animaciones
     if (!reduceMotion) {
       document.querySelectorAll('[data-parallax]').forEach((el) => {
