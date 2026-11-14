@@ -5,6 +5,20 @@
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- Menú para celular ---------- */
+  const menuBtn = document.querySelector('.menu-toggle');
+  const menuNav = document.getElementById('nav-principal');
+  if (menuBtn && menuNav) {
+    const setMenu = (abierto) => {
+      menuNav.classList.toggle('is-open', abierto);
+      menuBtn.setAttribute('aria-expanded', String(abierto));
+      menuBtn.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+    };
+    menuBtn.addEventListener('click', () => setMenu(!menuNav.classList.contains('is-open')));
+    menuNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+  }
+
   /* ---------- Marcado automático de bloques para animar al hacer scroll ---------- */
   // Cada grupo de hermanos (tarjetas, pasos, planes, preguntas) entra escalonado.
   const AUTO = [
