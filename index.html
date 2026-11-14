@@ -12,197 +12,177 @@
 </head>
 <body>
 
-<a class="skip" href="#main">Saltar al contenido</a>
-
-<div class="bg-glow" aria-hidden="true"></div>
-<div class="scroll-bar" aria-hidden="true"><span id="scroll-progress"></span></div>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 
 <header class="site-header">
   <div class="wrap nav">
     <a class="brand" href="#inicio">
-      <img class="brand-logo" src="assets/aps-developer-sin-fondo.png" alt="APS Developer" width="44" height="44" />
+      <img class="brand-logo" src="assets/aps-developer-sin-fondo.png" alt="APS Developer" width="36" height="36" />
       <span class="brand-text">APS <span>Developer</span><small>Centro de soporte</small></span>
     </a>
-    <nav class="nav-links">
-      <a href="#productos">Productos</a>
-      <a href="#faq">Preguntas</a>
-      <a href="#planes">Planes</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <div class="nav-search">
+      <input id="buscador" type="search" placeholder="Buscar en el centro de soporte…" aria-label="Buscar en el centro de soporte" />
+    </div>
   </div>
 </header>
 
-<main id="main">
+<div class="layout wrap" id="contenido">
 
-  <!-- HERO -->
-  <section id="inicio" class="hero wrap">
-    <div class="hero-copy reveal">
-      <span class="eyebrow">Soporte</span>
-      <h1>¿En qué te <span class="grad-text">podemos ayudar?</span></h1>
-      <p class="lead">Ayuda para APS Intelligence y para los sitios y proyectos que desarrolla APS Developer. Buscá tu tema o escribinos directamente.</p>
-      <div class="search" role="search">
-        <input id="buscador" type="search" placeholder="Buscá: límite diario, cambiar plan, cambios en mi web…" aria-label="Buscar en el centro de soporte" />
-      </div>
-    </div>
+  <aside class="sidebar" aria-label="Secciones">
+    <nav>
+      <p class="side-title">Empezar</p>
+      <a href="#inicio">Introducción</a>
 
-    <div class="hero-visual" aria-hidden="true">
-      <div class="logo-3d" id="logo3d">
-        <img src="assets/aps-developer-sin-fondo.png" alt="" />
-      </div>
-    </div>
-  </section>
+      <p class="side-title">APS Intelligence</p>
+      <a href="#cuenta">Cuenta y acceso</a>
+      <a href="#planes">Planes y límites</a>
+      <a href="#chat">Uso del chat</a>
+      <a href="#marca-personal">MARCA y PERSONAL</a>
 
-  <!-- PRODUCTOS -->
-  <section id="productos" class="wrap">
-    <div class="section-head reveal">
-      <h2>Elegí tu producto</h2>
-      <p>Cada uno tiene sus propias preguntas frecuentes.</p>
-    </div>
-    <div class="products">
-      <a class="product tilt reveal ai" href="#faq" data-filter="ai">
-        <div class="tag">Plataforma de IA</div>
-        <h3>APS Intelligence</h3>
-        <p>Cuenta, planes, uso del chat, modos MARCA y PERSONAL y problemas técnicos.</p>
-        <div class="go">Ver preguntas <span aria-hidden="true">→</span></div>
-      </a>
-      <a class="product tilt reveal dev" href="#faq" data-filter="dev">
-        <div class="tag">Desarrollo web</div>
-        <h3>APS Developer</h3>
-        <p>Sitios web, previews, cambios en tu web y paneles de gestión.</p>
-        <div class="go">Ver preguntas <span aria-hidden="true">→</span></div>
-      </a>
-    </div>
-  </section>
+      <p class="side-title">APS Developer</p>
+      <a href="#preview">Preview gratuita</a>
+      <a href="#cambios-web">Cambios en tu web</a>
+      <a href="#material">Material del negocio</a>
 
-  <!-- PASOS -->
-  <section class="wrap">
-    <div class="section-head reveal">
-      <h2>Cómo funciona el soporte</h2>
-      <p>Tres pasos para resolver tu consulta.</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-num">01</div>
-        <h3>Buscá la respuesta</h3>
-        <p>Las preguntas frecuentes cubren cuenta, planes, chat y proyectos web.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">02</div>
-        <h3>Escribinos</h3>
-        <p>Si no la encontrás, enviá tu consulta por WhatsApp o el formulario.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">03</div>
-        <h3>Te respondemos</h3>
-        <p>Te contestamos lo antes posible y, si hace falta, seguimos por correo.</p>
-      </div>
-    </div>
-  </section>
+      <p class="side-title">Ayuda</p>
+      <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </aside>
 
-  <!-- FAQ -->
-  <section id="faq" class="wrap">
-    <div class="section-head reveal">
-      <h2>Preguntas frecuentes</h2>
-      <p>Filtrá por producto o usá el buscador.</p>
-    </div>
-    <div class="filters reveal" role="group" aria-label="Filtrar por producto">
-      <button class="chip" data-filter="all" aria-pressed="true">Todas</button>
-      <button class="chip" data-filter="ai" aria-pressed="false">APS Intelligence</button>
-      <button class="chip" data-filter="dev" aria-pressed="false">APS Developer</button>
-    </div>
+  <main class="doc" id="main">
 
-    <div class="faq" id="lista-faq">
-      <details class="reveal" data-product="ai">
-        <summary>¿Cómo creo mi cuenta en APS Intelligence?</summary>
-        <p>Entrá a APS Intelligence, elegí crear cuenta y completá tus datos. Después podés empezar a usar el chat con el plan Basic.</p>
-      </details>
-      <details class="reveal" data-product="ai">
-        <summary>Olvidé mi contraseña, ¿qué hago?</summary>
-        <p>En la pantalla de ingreso, usá la opción de recuperar contraseña. Si el correo no llega, revisá la carpeta de spam o escribinos.</p>
-      </details>
-      <details class="reveal" data-product="ai">
-        <summary>¿Qué significa un uso?</summary>
-        <p>Cada envío que procesa el sistema consume un uso de tu plan. El plan Basic tiene un límite diario y los planes pagos, un límite mensual.</p>
-      </details>
-      <details class="reveal" data-product="ai">
-        <summary>¿Cuál es la diferencia entre MARCA y PERSONAL?</summary>
-        <p>MARCA usa la información de tu negocio para las tareas que autorices. PERSONAL es para uso general. Los datos de MARCA no pasan a PERSONAL salvo que los compartas de forma explícita.</p>
-      </details>
-      <details class="reveal" data-product="ai">
-        <summary>¿Cómo cambio de plan?</summary>
-        <p>Desde la sección de planes dentro de la app podés ver las opciones disponibles. Si la opción de pago aún no aparece, el cobro todavía no está habilitado y el plan no puede cambiarse desde ahí.</p>
-      </details>
-      <details class="reveal" data-product="ai">
-        <summary>El chat no responde o muestra un error</summary>
-        <p>Probá recargar la página y reenviar el mensaje. Si el error persiste, indicá qué estabas haciendo, la hora aproximada y el texto del error al contactarnos.</p>
-      </details>
-      <details class="reveal" data-product="ai">
-        <summary>¿Puedo usar APS Intelligence desde el celular?</summary>
-        <p>Sí, desde el navegador del celular. Estamos preparando la instalación como aplicación.</p>
-      </details>
+    <section id="inicio" class="doc-section">
+      <h1>Centro de soporte</h1>
+      <p class="lead">Documentación de APS Intelligence y de los proyectos web de APS Developer. Elegí una sección en el menú o buscá arriba.</p>
+      <p>Si no encontrás la respuesta, escribinos desde <a href="#contacto">Contacto</a> o usá el asistente APS Support IA (abajo a la derecha).</p>
+    </section>
 
-      <details class="reveal" data-product="dev">
-        <summary>¿Cómo pido una preview gratuita de mi negocio?</summary>
-        <p>Escribinos por WhatsApp o usá el formulario con el nombre de tu negocio, tu rubro y, si tenés, tu Instagram. Te respondemos con los pasos siguientes.</p>
-      </details>
-      <details class="reveal" data-product="dev">
-        <summary>¿Cómo pido cambios en una web que ya está publicada?</summary>
-        <p>Indicá qué querés cambiar, en qué página y con qué ejemplo si lo tenés. Si el cambio es grande, lo presupuestamos antes de hacerlo.</p>
-      </details>
-      <details class="reveal" data-product="dev">
-        <summary>¿Qué incluye la configuración de web?</summary>
-        <p>Depende del proyecto. Desde el sitio de APS Developer podés armar la configuración de tu web con el formulario de relevamiento y recibir una propuesta.</p>
-      </details>
-      <details class="reveal" data-product="dev">
-        <summary>¿Dónde envío el material de mi negocio?</summary>
-        <p>Podés enviar logo, fotos, textos y precios por WhatsApp o por correo a apsdeveloper.arg@gmail.com, indicando el nombre de tu negocio en el asunto.</p>
-      </details>
-    </div>
-    <p class="empty" id="vacio">No encontramos una pregunta con ese texto. Escribinos y te ayudamos.</p>
-  </section>
+    <!-- APS INTELLIGENCE -->
+    <section id="cuenta" class="doc-section" data-product="ai">
+      <p class="kicker">APS Intelligence</p>
+      <h2>Cuenta y acceso</h2>
 
-  <!-- PLANES -->
-  <section id="planes" class="wrap">
-    <div class="section-head reveal">
-      <h2>Planes de APS Intelligence</h2>
+      <article class="doc-item" data-product="ai">
+        <h3>¿Cómo creo mi cuenta?</h3>
+        <p>Entrá a APS Intelligence, elegí crear cuenta y completá tus datos. Después podés usar el chat con el plan Basic.</p>
+      </article>
+      <article class="doc-item" data-product="ai">
+        <h3>Olvidé mi contraseña</h3>
+        <p>En la pantalla de ingreso, usá la opción de recuperar contraseña. Si el correo no llega, revisá la carpeta de spam. Si sigue sin llegar, escribinos.</p>
+      </article>
+      <article class="doc-item" data-product="ai">
+        <h3>¿Puedo usar APS Intelligence desde el celular?</h3>
+        <p>Sí, desde el navegador del celular. La instalación como aplicación está en preparación.</p>
+      </article>
+    </section>
+
+    <section id="planes" class="doc-section" data-product="ai">
+      <p class="kicker">APS Intelligence</p>
+      <h2>Planes y límites</h2>
       <p>Los valores pueden cambiar. La versión vigente es la que aparece dentro de la app.</p>
-    </div>
-    <div class="plans">
-      <div class="plan tilt reveal">
-        <h3>Basic</h3>
-        <div class="price">Gratis</div>
-        <ul><li>15 usos por día</li></ul>
-      </div>
-      <div class="plan tilt reveal featured">
-        <h3>Plus</h3>
-        <div class="price">US$15 <small>/ mes</small></div>
-        <ul><li>600 usos por mes</li></ul>
-      </div>
-      <div class="plan tilt reveal">
-        <h3>Pro</h3>
-        <div class="price">US$55 <small>/ mes</small></div>
-        <ul><li>1.200 usos por mes</li></ul>
-      </div>
-      <div class="plan tilt reveal">
-        <h3>Max</h3>
-        <div class="price">US$60 <small>/ mes</small></div>
-        <ul><li>4.000 usos por mes</li></ul>
-      </div>
-    </div>
-  </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="wrap">
-    <div class="contact reveal">
-      <div>
-        <h2>¿No encontraste tu respuesta?</h2>
-        <p>Escribinos y te respondemos lo antes posible. Si consultás por APS Intelligence, incluí el correo de tu cuenta. Si es por un proyecto web, incluí el nombre del negocio.</p>
-        <div class="channels">
-          <a class="btn btn-wa" href="https://wa.me/5493755301413" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn btn-ghost" href="mailto:apsdeveloper.arg@gmail.com">Enviar correo</a>
-        </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Plan</th><th>Precio</th><th>Límite</th></tr></thead>
+          <tbody>
+            <tr><td>Basic</td><td>Gratis</td><td>15 usos por día</td></tr>
+            <tr><td>Plus</td><td>US$15 / mes</td><td>600 usos por mes</td></tr>
+            <tr><td>Pro</td><td>US$55 / mes</td><td>1.200 usos por mes</td></tr>
+            <tr><td>Max</td><td>US$60 / mes</td><td>4.000 usos por mes</td></tr>
+          </tbody>
+        </table>
       </div>
-      <form id="form-soporte" aria-label="Formulario de soporte">
+
+      <article class="doc-item" data-product="ai">
+        <h3>¿Qué significa un uso?</h3>
+        <p>Cada envío que procesa el sistema consume un uso de tu plan. Basic tiene límite diario; los planes pagos, límite mensual.</p>
+      </article>
+      <article class="doc-item" data-product="ai">
+        <h3>¿Cómo cambio de plan?</h3>
+        <p>Desde la sección de planes dentro de la app. Si la opción de pago todavía no aparece, el cobro no está habilitado y el cambio no se puede hacer desde ahí.</p>
+      </article>
+    </section>
+
+    <section id="chat" class="doc-section" data-product="ai">
+      <p class="kicker">APS Intelligence</p>
+      <h2>Uso del chat</h2>
+      <article class="doc-item" data-product="ai">
+        <h3>El chat no responde o muestra un error</h3>
+        <p>Recargá la página y reenviá el mensaje. Si el error sigue, indicá qué estabas haciendo, la hora aproximada y el texto del error al contactarnos.</p>
+      </article>
+    </section>
+
+    <section id="marca-personal" class="doc-section" data-product="ai">
+      <p class="kicker">APS Intelligence</p>
+      <h2>MARCA y PERSONAL</h2>
+      <article class="doc-item" data-product="ai">
+        <h3>¿Cuál es la diferencia?</h3>
+        <p><strong>MARCA</strong> usa la información de tu negocio para las tareas que autorices. <strong>PERSONAL</strong> es para uso general.</p>
+        <p>Los datos de MARCA no pasan a PERSONAL, salvo que los compartas de forma explícita.</p>
+      </article>
+    </section>
+
+    <!-- APS DEVELOPER -->
+    <section id="preview" class="doc-section" data-product="dev">
+      <p class="kicker">APS Developer</p>
+      <h2>Preview gratuita</h2>
+      <article class="doc-item" data-product="dev">
+        <h3>¿Cómo pido una preview de mi negocio?</h3>
+        <p>Escribinos por WhatsApp o usá el formulario de contacto con el nombre de tu negocio, tu rubro y, si tenés, tu Instagram. Te respondemos con los pasos siguientes.</p>
+      </article>
+    </section>
+
+    <section id="cambios-web" class="doc-section" data-product="dev">
+      <p class="kicker">APS Developer</p>
+      <h2>Cambios en tu web</h2>
+      <article class="doc-item" data-product="dev">
+        <h3>¿Cómo pido cambios en una web publicada?</h3>
+        <p>Indicá qué querés cambiar, en qué página y con qué ejemplo si lo tenés. Si el cambio es grande, lo presupuestamos antes de hacerlo.</p>
+      </article>
+      <article class="doc-item" data-product="dev">
+        <h3>¿Qué incluye la configuración de web?</h3>
+        <p>Depende del proyecto. Podés armar la configuración con el formulario de relevamiento y recibir una propuesta.</p>
+      </article>
+    </section>
+
+    <section id="material" class="doc-section" data-product="dev">
+      <p class="kicker">APS Developer</p>
+      <h2>Material del negocio</h2>
+      <article class="doc-item" data-product="dev">
+        <h3>¿Dónde envío logo, fotos, textos y precios?</h3>
+        <p>Por WhatsApp o por correo a <a href="mailto:apsdeveloper.arg@gmail.com">apsdeveloper.arg@gmail.com</a>, indicando el nombre de tu negocio en el asunto.</p>
+      </article>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section id="preguntas-frecuentes" class="doc-section">
+      <h2>Preguntas frecuentes</h2>
+      <p>Las respuestas más consultadas, de ambos productos.</p>
+      <div class="faq" id="lista-faq">
+        <details data-product="ai"><summary>¿Cómo creo mi cuenta?</summary><p>Ver <a href="#cuenta">Cuenta y acceso</a>.</p></details>
+        <details data-product="ai"><summary>Olvidé mi contraseña</summary><p>Ver <a href="#cuenta">Cuenta y acceso</a>.</p></details>
+        <details data-product="ai"><summary>¿Qué significa un uso?</summary><p>Ver <a href="#planes">Planes y límites</a>.</p></details>
+        <details data-product="ai"><summary>¿Cómo cambio de plan?</summary><p>Ver <a href="#planes">Planes y límites</a>.</p></details>
+        <details data-product="ai"><summary>El chat muestra un error</summary><p>Ver <a href="#chat">Uso del chat</a>.</p></details>
+        <details data-product="ai"><summary>MARCA o PERSONAL: ¿cuál es la diferencia?</summary><p>Ver <a href="#marca-personal">MARCA y PERSONAL</a>.</p></details>
+        <details data-product="dev"><summary>¿Cómo pido una preview gratuita?</summary><p>Ver <a href="#preview">Preview gratuita</a>.</p></details>
+        <details data-product="dev"><summary>¿Cómo pido cambios en mi web?</summary><p>Ver <a href="#cambios-web">Cambios en tu web</a>.</p></details>
+        <details data-product="dev"><summary>¿Dónde envío el material de mi negocio?</summary><p>Ver <a href="#material">Material del negocio</a>.</p></details>
+      </div>
+      <p class="empty" id="vacio">No encontramos resultados para tu búsqueda. Escribinos desde <a href="#contacto">Contacto</a>.</p>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="doc-section">
+      <h2>Contacto</h2>
+      <p>Si no encontraste tu respuesta, escribinos. Para consultas de APS Intelligence, incluí el correo de tu cuenta. Para proyectos web, incluí el nombre del negocio.</p>
+      <div class="channels">
+        <a class="btn btn-wa" href="https://wa.me/5493755301413" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-ghost" href="mailto:apsdeveloper.arg@gmail.com">Enviar correo</a>
+      </div>
+
+      <form id="form-soporte" class="support-form" aria-label="Formulario de soporte">
         <label>Nombre
           <input name="nombre" required maxlength="80" autocomplete="name" />
         </label>
@@ -221,18 +201,15 @@
           <textarea name="mensaje" required maxlength="1000"></textarea>
         </label>
         <button class="btn btn-primary" type="submit">Enviar consulta</button>
-        <span class="hint">Al enviar se abre WhatsApp con tu consulta ya redactada. Esta página no guarda tus datos.</span>
+        <span class="hint">Se abre WhatsApp con tu consulta ya redactada. Esta página no guarda tus datos.</span>
       </form>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer class="site-footer">
-  <div class="wrap foot">
-    <span>© APS Developer · Centro de soporte</span>
-    <span><a href="#faq">Preguntas frecuentes</a> · <a href="#contacto">Contacto</a></span>
-  </div>
-</footer>
+    <footer class="site-footer">
+      <span>© APS Developer · Centro de soporte</span>
+    </footer>
+  </main>
+</div>
 
 <!-- ASISTENTE IA -->
 <button id="chat-launcher" class="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel">
