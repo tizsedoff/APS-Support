@@ -5,17 +5,6 @@
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- Guía de recuperación de contraseña (diálogo) ---------- */
-  const dlgOlvide = document.getElementById('forgot-dialog');
-  if (dlgOlvide) {
-    const abrir = () => (typeof dlgOlvide.showModal === 'function' ? dlgOlvide.showModal() : dlgOlvide.setAttribute('open', ''));
-    const cerrar = () => (typeof dlgOlvide.close === 'function' ? dlgOlvide.close() : dlgOlvide.removeAttribute('open'));
-    document.querySelectorAll('[data-open-forgot]').forEach((b) => b.addEventListener('click', abrir));
-    dlgOlvide.querySelectorAll('[data-close-forgot]').forEach((b) => b.addEventListener('click', cerrar));
-    // Cerrar al tocar fuera de la caja
-    dlgOlvide.addEventListener('click', (e) => { if (e.target === dlgOlvide) cerrar(); });
-  }
-
   /* ---------- Menú para celular ---------- */
   const menuBtn = document.querySelector('.menu-toggle');
   const menuNav = document.getElementById('nav-principal');
