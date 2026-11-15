@@ -63,6 +63,29 @@
     return el;
   }
 
+  // Detecta consultas de recuperación de contraseña (con o sin tildes)
+  function normalizar(t) {
+    return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  function esRecuperacion(t) {
+    const n = normalizar(t);
+    const hablaDeClave = /contrase|clave|password|pass\b/.test(n);
+    const problema = /olvid|recuper|perd|no recuerdo|no me acuerdo|no puedo (ingresar|entrar|acceder|iniciar)|cambiar/.test(n);
+    return hablaDeClave && problema;
+  }
+
+  function addRecoveryButton() {
+    const box = document.createElement('div');
+    box.className = 'chat-handoff';
+    const a = document.createElement('a');
+    a.href = 'recuperar-contrasena.html';
+    a.className = 'btn btn-primary btn-sm forgot-chat';
+    a.textContent = 'OLVIDÉ MI CONTRASEÑA';
+    box.appendChild(a);
+    log.appendChild(box);
+    log.scrollTop = log.scrollHeight;
+  }
+
   async function send(text) {
     if (busy || !text) return;
     busy = true;
@@ -70,6 +93,18 @@
 
     addMsg('user', text);
     history.push({ role: 'user', text });
+
+    // Recuperación de contraseña: respuesta directa con el botón, sin consultar a la IA
+    if (esRecuperacion(text)) {
+      const msg = 'Para recuperar tu contraseña, nuestro equipo te ayuda por WhatsApp o por correo. Tocá el botón y te llevamos a la guía. No hace falta que nos envíes la contraseña.';
+      addMsg('bot', msg);
+      history.push({ role: 'assistant', text: msg });
+      addRecoveryButton();
+      busy = false;
+      sendBtn.disabled = false;
+      input.focus();
+      return;
+    }
 
     const typing = addTyping();
     try {
