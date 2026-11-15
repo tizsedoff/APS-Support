@@ -525,3 +525,9 @@ main > section.wrap + section.wrap { border-top: 1px solid var(--border); paddin
 .forgot-help strong { color: var(--text); }
 .forgot-help .channels { margin: 10px 0 8px; }
 .forgot-help .hint { font-size: 12px; color: var(--text-3); }
+
+/* Botón OLVIDÉ MI CONTRASEÑA: sin subrayado y con espacio debajo para no encimar el buscador */
+.forgot-btn { text-decoration: none; }
+.forgot-btn:hover, .forgot-btn:focus-visible { text-decoration: none; }
+.search-wrap { margin: 0 0 22px; }
+.search-wrap .forgot-btn { margin-top: 0; }
